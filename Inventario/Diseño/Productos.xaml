@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventario.Productos"
+             BackgroundColor="#5033a0">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="12, 0, 12, 20" VerticalOptions="FillAndExpand">
+                <Grid BackgroundColor="White" Opacity="0.3"></Grid>
+                <StackLayout HorizontalOptions="Center">
+                    <Grid Margin="0, 20, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0"
+                           Grid.Column="0"
+                           Source="admin"
+                           HeightRequest="60"
+                           Aspect="AspectFit"
+                           Margin="20, 0, 0, 0"
+                           x:Name="imgTipoUsuario"/>
+                        <Label Grid.Row="0"
+                           Grid.Column="1"
+                           Text="tipousuario"
+                           TextColor="White"
+                           FontSize="34"
+                           FontAttributes="Bold"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           Margin="5, 0, 0, 0"
+                           x:Name="lblTipoUsuario"/>
+                    </Grid>
+                    <Grid Margin="0, 30, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                            <RowDefinition Height="*"></RowDefinition>
+                            <RowDefinition Height="auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <!--
+                        ****** FUNCIONES ******
+                        -->
+                        <!-- Primera fila -->
+                        <ImageButton Grid.Row="0"
+                                     Grid.Column="0"
+                                     Source="agregar"
+                                     HeightRequest="90"
+                                     Aspect="AspectFit"
+                                     BackgroundColor="Transparent"
+                                     IsEnabled="True"
+                                     Opacity="1"
+                                     x:Name="btnAgregarProducto"/>
+                        <ImageButton Grid.Row="0"
+                                     Grid.Column="1"
+                                     Source="eliminar1"
+                                     HeightRequest="90"
+                                     Aspect="AspectFit"
+                                     BackgroundColor="Transparent"
+                                     IsEnabled="True"
+                                     Opacity="1"
+                                     x:Name="btnEliminarProducto"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="0"
+                               Text="Agregar"
+                               TextColor="White"
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               x:Name="lblAgregar"/>
+                        <Label Grid.Row="1"
+                               Grid.Column="1"
+                               Text="Eliminar"
+                               TextColor="White"
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"
+                               x:Name="lblEliminar"
+                               Margin="0, 0, 0, 30"/>
+                        <!-- Segunda fila -->
+                        <ImageButton Grid.Row="2"
+                                     Grid.Column="0"
+                                     Source="modificar"
+                                     HeightRequest="90"
+                                     Aspect="AspectFit"
+                                     BackgroundColor="Transparent"
+                                     IsEnabled="True"
+                                     Opacity="1"
+                                     x:Name="btnModificarProducto"/>
+                        <ImageButton Grid.Row="2"
+                                     Grid.Column="1"
+                                     Source="ver"
+                                     HeightRequest="90"
+                                     Aspect="AspectFit"
+                                     BackgroundColor="Transparent"
+                                     IsEnabled="True"
+                                     Opacity="1"
+                                     x:Name="btnVerProducto"/>
+                        <Label Grid.Row="3"
+                               Grid.Column="0"
+                               Text="Modificar"
+                               TextColor="White"
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Grid.Row="3"
+                               Grid.Column="1"
+                               Text="Ver"
+                               TextColor="White"
+                               FontSize="30"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                    </Grid>
+                    <Button Text="Salir"
+                            TextColor="White"
+                            FontSize="34"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            BorderWidth="3"
+                            CornerRadius="15"
+                            Margin="20, 40, 20, 0"
+                            Clicked="btnSalirClicked"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventario.Eliminar"
+             BackgroundColor="#5033a0">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="12, 0, 12, 20"
+              VerticalOptions="FillAndExpand">
+                <Grid BackgroundColor="Gray" Opacity="0.3"></Grid>
+                <StackLayout HorizontalOptions="Center" Padding="10">
+                    <Grid Margin="0, 0, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0"
+                               Grid.Column="0"
+                               Source="eliminar1"
+                               HeightRequest="60"
+                               Aspect="AspectFit"
+                               Margin="20, 0, 0, 0"
+                               x:Name="imgTipoUsuario"/>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="Eliminar"
+                               TextColor="White"
+                               FontSize="34"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Margin="5, 0, 0, 0"/>
+                    </Grid>
+
+                    <!-- Botones -->
+                    <Button Text="Escanear QR"
+                            TextColor="White"
+                            FontSize="26"
+                            FontAttributes="Bold"
+                            BackgroundColor="#5033a0"
+                            BorderColor="#5033a0"
+                            BorderWidth="3"
+                            CornerRadius="15"
+                            x:Name="btnEscanearQR"
+                            Margin="0, 20, 0, 20"/>
+                    <Label Text="Ó eliminar por Clave:"
+                           TextColor="White"
+                           HorizontalTextAlignment="Start"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="26"
+                           Keyboard="Numeric"
+                           Placeholder="Ej.: 001"
+                           MaxLength="3"
+                           x:Name="txtClaveProducto"
+                           Margin="0, 0, 0, 0"
+                           TextChanged="txtClaveProducto_TextChanged"/>
+                    <Button Text="Eliminar"
+                            TextColor="White"
+                            FontSize="24"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            BorderColor="White"
+                            BorderWidth="3"
+                            CornerRadius="15"
+                            x:Name="btnEliminarProductoClicked"
+                            Margin="0, 0, 0, 20"
+                            IsEnabled="False"
+                            Clicked="btnEliminarProductoClicked_Clicked"/>
+                    <Button Text="Regresar"
+                            TextColor="White"
+                            FontSize="22"
+                            FontAttributes="Bold"
+                            BackgroundColor="Transparent"
+                            x:Name="btnSalirClicked"
+                            Margin="0, 0, 0, 20"/>
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

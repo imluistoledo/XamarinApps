@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventario.Trabajador"
+             BackgroundColor="#5033a0">
+    <ContentPage.Content>
+        <Grid Margin="12, 0, 12, 20" VerticalOptions="FillAndExpand">
+            <Grid BackgroundColor="White" Opacity="0.3"></Grid>
+            <StackLayout HorizontalOptions="Center">
+                <Image Source="trabajador"
+                       HeightRequest="80"
+                       Aspect="AspectFit"
+                       Margin="0, 30, 0, 10"/>
+                <Label Text="Trabajador"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       FontSize="42"
+                       FontAttributes="Bold"
+                       Margin="0, 10, 0, 20"/>
+                <!-- Controles para ID -->
+                <Label Text="Ingrese su ID:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+                <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="24"
+                       Keyboard="Numeric"
+                       Placeholder="Ej.: 030730"
+                       MaxLength="6"
+                       x:Name="txtID"
+                       TextChanged="txtID_TextChanged"
+                       TabIndex="1"/>
+                <Label Text="Error"
+                       TextColor="Salmon"
+                       HorizontalTextAlignment="End"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       Margin="0, 0, 0, 20"
+                       x:Name="lblIDStatus"/>
+                <!-- Controles para contraseña -->
+                <Label Text="Ingrese su contraseña:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="18"
+                       FontAttributes="Bold"/>
+                <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="24"
+                       Keyboard="Numeric"
+                       IsPassword="True"
+                       Placeholder="Ej.: trabajador$1"
+                       MaxLength="10"
+                       x:Name="txtPass"
+                       TextChanged="txtPass_TextChanged"
+                       TabIndex="2"/>
+                <Label Text="Error"
+                       TextColor="Salmon"
+                       HorizontalTextAlignment="End"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       x:Name="lblPassStatus"/>
+                <Button Text="Regresar"
+                        TextColor="White"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        BorderColor="White"
+                        BorderWidth="3"
+                        CornerRadius="15"
+                        Clicked="btnSalirClicked"
+                        Margin="0, 20, 0, 0"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

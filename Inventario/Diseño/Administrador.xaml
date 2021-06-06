@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventario.Administrador"
+             BackgroundColor="#5033a0">
+    <ContentPage.Content>
+        <Grid Margin="12, 0, 12, 20" VerticalOptions="FillAndExpand">
+            <Grid BackgroundColor="White" Opacity="0.3"></Grid>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="50">
+                <Image Source="admin"
+                       HeightRequest="120"
+                       Aspect="AspectFit"/>
+                <Label Text="Administrador"
+                       TextColor="White"
+                       HorizontalTextAlignment="Center"
+                       FontSize="42"
+                       FontAttributes="Bold"/>
+                <Button Text="Ingresar huella"
+                        TextColor="#5033a0"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        BackgroundColor="White"
+                        BorderColor="White"
+                        BorderWidth="3"
+                        CornerRadius="15"
+                        Clicked="btnIngresarHuellaClicked"/>
+                <Button Text="Regresar"
+                        TextColor="White"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        BackgroundColor="Transparent"
+                        BorderColor="White"
+                        BorderWidth="3"
+                        CornerRadius="15"
+                        Clicked="btnSalirClicked"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

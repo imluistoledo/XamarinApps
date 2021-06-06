@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventario.MainPage"
+             BackgroundColor="#5033a0">
+
+    <Grid Margin="12, 0, 12, 30" VerticalOptions="FillAndExpand">
+        <Grid BackgroundColor="White" Opacity="0.3"></Grid>
+        <Grid Padding="10" RowSpacing="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Image Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Source="inventario"
+                   HeightRequest="140"
+                   Aspect="AspectFit"
+                   Margin="0, 10, 0, 10"/>
+            <Label Grid.Row="1"
+                   Grid.ColumnSpan="2"
+                   HorizontalTextAlignment="Center"
+                   Text="¡Bienvenido a su inventario!"
+                   TextColor="White"
+                   FontSize="40"
+                   FontAttributes="Bold"/>
+            <Label Grid.Row="2"
+                   Grid.ColumnSpan="2"
+                   HorizontalOptions="Center"
+                   Text="Seleccione su usuario:"
+                   TextColor="White"
+                   FontSize="28"/>
+            <ImageButton Grid.Row="3"
+                         Grid.Column="0"
+                         Source="admin"
+                         BackgroundColor="Transparent"
+                         Clicked="btnAdministradorClicked"/>
+            <ImageButton Grid.Row="3"
+                         Grid.Column="1"
+                         Source="trabajador"
+                         BackgroundColor="Transparent"
+                         Clicked="btnTrabajadorClicked"/>
+            <Label Grid.Row="4"
+                   Grid.Column="0"
+                   Text="Administrador"
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="4"
+                   Grid.Column="1"
+                   Text="Trabajador"
+                   TextColor="White"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+        </Grid>
+    </Grid>
+</ContentPage>

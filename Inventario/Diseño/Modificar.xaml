@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Inventario.Modificar"
+             BackgroundColor="#5033a0">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid Margin="12, 0, 12, 20"
+              VerticalOptions="FillAndExpand">
+                <Grid BackgroundColor="White" Opacity="0.3"></Grid>
+                <StackLayout HorizontalOptions="Center" Padding="10">
+                    <Grid Margin="0, 0, 0, 10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="auto"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Image Grid.Row="0"
+                               Grid.Column="0"
+                               Source="modificar"
+                               HeightRequest="60"
+                               Aspect="AspectFit"
+                               Margin="20, 0, 0, 0"
+                               x:Name="imgTipoUsuario"/>
+                        <Label Grid.Row="0"
+                               Grid.Column="1"
+                               Text="Modificar"
+                               TextColor="White"
+                               FontSize="34"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Center"
+                               Margin="5, 0, 0, 0"/>
+                    </Grid>
+                    <Label Text="ID:"
+                           TextColor="White"
+                           HorizontalTextAlignment="Start"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="26"
+                           Keyboard="Numeric"
+                           Placeholder="Ej.: 1"
+                           MaxLength="3"
+                           x:Name="txtIDProducto"/>
+                    <Label Text="Clave:"
+                           TextColor="White"
+                           HorizontalTextAlignment="Start"
+                           FontSize="20"
+                           FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                           TextColor="White"
+                           FontAttributes="Bold"
+                           FontSize="26"
+                           Keyboard="Numeric"
+                           Placeholder="Ej.: 001"
+                           MaxLength="3"
+                           x:Name="txtClaveProducto"
+                           Margin="0, 0, 0, 0"/>
+                    <Label Text="Nombre:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="26"
+                       Keyboard="Text"
+                       Placeholder="Ej.: Lapiz"
+                       MaxLength="30"
+                       x:Name="txtNombre"
+                       Margin="0, 0, 0, 20"/>
+                    <Label Text="Precio:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="26"
+                       Keyboard="Numeric"
+                       Placeholder="Ej.: 3.50"
+                       MaxLength="10"
+                       x:Name="txtPrecio"
+                       Margin="0, 0, 0, 20"/>
+                    <Label Text="Cantidad:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="26"
+                       Keyboard="Numeric"
+                       Placeholder="Ej.: 99"
+                       MaxLength="4"
+                       x:Name="txtCantidad"
+                       Margin="0, 0, 0, 20"/>
+                    <Label Text="Proveedor:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="26"
+                       Keyboard="Text"
+                       Placeholder="Ej.: Juan Perez Lopez"
+                       MaxLength="30"
+                       x:Name="txtProveedor"
+                       Margin="0, 0, 0, 20"/>
+                    <Label Text="Teléfono del proveedor:"
+                       TextColor="White"
+                       HorizontalTextAlignment="Start"
+                       FontSize="20"
+                       FontAttributes="Bold"/>
+                    <Entry BackgroundColor="Transparent"
+                       TextColor="White"
+                       FontAttributes="Bold"
+                       FontSize="26"
+                       Keyboard="Telephone"
+                       Placeholder="Ej.: 528672496747"
+                       MaxLength="12"
+                       x:Name="txtProveedorTel"
+                       Margin="0, 0, 0, 20"/>
+
+                    <Grid Margin="0, 0, 0, 20">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button Grid.Row="0"
+                                Grid.Column="1"
+                                Text="Modificar"
+                                TextColor="White"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                BackgroundColor="#5F358F"
+                                BorderColor="#5F358F"
+                                BorderWidth="3"
+                                CornerRadius="15"
+                                x:Name="btnModificarProductoClicked"/>
+                        <Button Grid.Row="0"
+                                Grid.Column="0"
+                                Text="Regresar"
+                                TextColor="White"
+                                FontSize="24"
+                                FontAttributes="Bold"
+                                BackgroundColor="Transparent"
+                                x:Name="btnSalirClicked"/>
+                    </Grid>
+
+                    <ListView x:Name="ProductListView"
+                              ItemSelected="ProductListView_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <!-- Data Bindings -->
+                                        <Image Grid.Row="0"
+                                               Grid.RowSpan="2"
+                                               Source="productos"
+                                               Aspect="AspectFit"
+                                               HeightRequest="60"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="1"
+                                               Text="{Binding prodClave}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="2"
+                                               Text="{Binding prodName}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="3"
+                                               Text="{Binding prodPrec}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               HorizontalTextAlignment="Center"/>
+                                        <Label Grid.Row="0"
+                                               Grid.Column="4"
+                                               Text="{Binding prodCant}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               HorizontalTextAlignment="End"/>
+                                        <Label Grid.Row="1"
+                                               Grid.Column="1"
+                                               Text="{Binding provName}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               HorizontalTextAlignment="Start"/>
+                                        <Label Grid.Row="1"
+                                               Grid.Column="2"
+                                               Grid.ColumnSpan="3"
+                                               Text="{Binding provTel}"
+                                               TextColor="White"
+                                               FontAttributes="Bold"
+                                               FontSize="14"
+                                               HorizontalTextAlignment="Start"/>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                </StackLayout>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
